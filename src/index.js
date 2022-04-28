@@ -30,3 +30,20 @@ const tasksArray = [
 ];
 
 const sortedTasks = tasksArray.sort((x, y) => x.index - y.index);
+
+const populateTodo = () => {
+  const li = [];
+  const template = [];
+  for (let j = 0; j < sortedTasks.length; j += 1) {
+    li[j] = document.createElement('li');
+    li[j].className = 'list-item';
+    template[j] = `
+          <span class="task-item"><input type="checkbox"  id="task-check" name="task-check"><label for="task-check" class="m-left">${sortedTasks[j].description}</label></span>
+          <a href="#" class="task-option"><span class="material-icons">more_vert</span></a>
+        `;
+    li[j].innerHTML = template[j];
+    toDoList.appendChild(li[j]);
+  }
+};
+
+populateTodo();
