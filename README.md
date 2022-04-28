@@ -6,7 +6,7 @@
 - CSS
 - Javascript ES6
 - Webpack
-- Font Awesome CSS library
+- Material UI icons
 
 ## Live Demo
 > If available can be seen here: https://mwenyoa.github.io/To-Do-List/
