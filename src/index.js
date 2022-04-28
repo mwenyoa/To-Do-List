@@ -46,4 +46,4 @@ const populateTodo = () => {
   }
 };
 
-populateTodo();
+window.addEventListener('DOMCotentLoaded', populateTodo());
