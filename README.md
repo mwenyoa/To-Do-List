@@ -50,7 +50,7 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
- The design of the was inspired by:
+ The design of the project was inspired by:
  > <a href="https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/">Minimalist website</a>
 
 ## 📝 License
