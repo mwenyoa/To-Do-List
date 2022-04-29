@@ -50,4 +50,15 @@ export default class Tasker {
       this.populateTodo();
     }
   }
+
+  // Save data to local storage
+  save() {
+    this.tasksArray.forEach((task, index) => {
+      this.tasksArray[index].index = (index + 1);
+    });
+
+    this.tasksArray.sort((x, y) => x.index - y.index);
+
+    localStorage.setItem('tasks', JSON.stringify(this.tasksArray));
+  }
 }
