@@ -42,4 +42,12 @@ export default class Tasker {
       this.populateTodo();
     }
   }
+
+  // Add logic to delete item
+  delete(activityIndex) {
+    if (activityIndex) {
+      this.tasksArray.splice((activityIndex - 1), 1);
+      this.populateTodo();
+    }
+  }
 }
