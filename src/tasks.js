@@ -61,4 +61,10 @@ export default class Tasker {
 
     localStorage.setItem('tasks', JSON.stringify(this.tasksArray));
   }
+
+  // edit task description
+  edit(index, description) {
+    this.tasksArray[index - 1].description = description;
+    this.save();
+  }
 }
