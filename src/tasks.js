@@ -67,4 +67,26 @@ export default class Tasker {
     this.tasksArray[index - 1].description = description;
     this.save();
   }
+
+  // function to listen to activity
+  Actions() {
+    // Delete Activity
+    const deleteBtns = document.querySelectorAll('.delete-activity');
+    if (deleteBtns) {
+      deleteBtns.forEach((activity) => {
+        activity.addEventListener('click', () => this.delete(activity.getAttribute('data-id')));
+      });
+    }
+    // edit activity
+    const activities = document.querySelectorAll('.activity');
+    if (activities) {
+      activities.forEach((activity) => {
+        activity.addEventListener('input', (e) => {
+          const description = e.target.innerText;
+          const index = e.target.getAttribute('data-id');
+          this.edit(index, description);
+        });
+      });
+    }
+  }
 }
