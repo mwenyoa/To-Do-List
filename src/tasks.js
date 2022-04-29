@@ -29,4 +29,17 @@ export default class Tasker {
     });
     this.Actions();
   }
+
+  // Add activity
+  add(actv) {
+    if (actv || actv === 0) {
+      const newActivity = {
+        description: actv,
+        completed: false,
+        index: this.tasksArray.length,
+      };
+      this.tasksArray.push(newActivity);
+      this.populateTodo();
+    }
+  }
 }
