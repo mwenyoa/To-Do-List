@@ -11,14 +11,24 @@ export default class Tasker {
     this.tasksArray.forEach((taskItem) => {
       let activityItem = `
         <li class="d-flex s-between list-item" id="item-data-${taskItem.index}">`;
-      activityItem += `
+      if (taskItem.completed) {
+        activityItem += `
+                <span class="material-icons done update-status" data-id="${taskItem.index}">
+                  done
+                </span>
+                <p contenteditable="true" class="completed activity" data-id="${taskItem.index}">
+                  ${taskItem.description}
+                </p>
+                `;
+      } else {
+        activityItem += `
             <span class="material-icons  update-status"  data-id="${taskItem.index}">
               check_box_outline_blank
             </span>
             <p contenteditable="true" class="activity" data-id="${taskItem.index}">
               ${taskItem.description}
             </p>`;
-
+      }
       activityItem += `
           <span class="material-icons delete-activity"  data-id="${taskItem.index}">
             delete
@@ -51,6 +61,18 @@ export default class Tasker {
     }
   }
 
+  // update  completed  task status
+  updateActivityStatus(activityIndex) {
+    if (activityIndex !== undefined) {
+      if (this.tasksArray[activityIndex - 1].completed === true) {
+        this.tasksArray[activityIndex - 1].completed = false;
+      } else {
+        this.tasksArray[activityIndex - 1].completed = true;
+      }
+    }
+    this.populateTodo();
+  }
+
   // Save data to local storage
   save() {
     this.tasksArray.forEach((task, index) => {
@@ -70,23 +92,29 @@ export default class Tasker {
 
   // function to listen to activity
   Actions() {
-    // Delete Activity
-    const deleteBtns = document.querySelectorAll('.delete-activity');
-    if (deleteBtns) {
-      deleteBtns.forEach((activity) => {
-        activity.addEventListener('click', () => this.delete(activity.getAttribute('data-id')));
+    const updateStatusBtns = document.querySelectorAll('.update-status');
+    if (updateStatusBtns !== null) {
+      updateStatusBtns.forEach((item) => {
+        item.addEventListener('click', () => this.updateActivityStatus(item.getAttribute('data-id')));
       });
-    }
-    // edit activity
-    const activities = document.querySelectorAll('.activity');
-    if (activities) {
-      activities.forEach((activity) => {
-        activity.addEventListener('input', (e) => {
-          const description = e.target.innerText;
-          const index = e.target.getAttribute('data-id');
-          this.edit(index, description);
+      // Delete Activity
+      const deleteBtns = document.querySelectorAll('.delete-activity');
+      if (deleteBtns) {
+        deleteBtns.forEach((activity) => {
+          activity.addEventListener('click', () => this.delete(activity.getAttribute('data-id')));
         });
-      });
+      }
+      // edit activity
+      const activities = document.querySelectorAll('.activity');
+      if (activities) {
+        activities.forEach((activity) => {
+          activity.addEventListener('input', (e) => {
+            const description = e.target.innerText;
+            const index = e.target.getAttribute('data-id');
+            this.edit(index, description);
+          });
+        });
+      }
     }
   }
 }
