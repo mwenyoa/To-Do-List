@@ -11,3 +11,8 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
   todoList.add(action);
   e.target.reset();
 });
+
+// clear completed Activities
+document.querySelector('.clear-completed').addEventListener('click', () => {
+  todoList.clearCompleted();
+});
