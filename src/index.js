@@ -16,3 +16,8 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
 document.querySelector('.clear-completed').addEventListener('click', () => {
   todoList.clearCompleted();
 });
+
+// Refresh window
+document.querySelector('#refresh-all').addEventListener('click', () => {
+  window.location.reload();
+});
