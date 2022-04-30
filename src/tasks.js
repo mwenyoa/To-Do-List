@@ -73,6 +73,12 @@ export default class Tasker {
     this.populateTodo();
   }
 
+  // Clear completed items
+  clearCompleted() {
+    this.tasksArray = this.tasksArray.filter((activity) => activity.completed === false);
+    this.populateTodo();
+  }
+
   // Save data to local storage
   save() {
     this.tasksArray.forEach((task, index) => {
