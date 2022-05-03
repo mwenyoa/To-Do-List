@@ -9,7 +9,7 @@
 - Material UI icons
 
 ## Live Demo
-> If available can be seen here: https://mwenyoa.github.io/To-Do-List/dist/
+> If available can be seen here: https://mwenyoa.github.io/To-Do-List/
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
