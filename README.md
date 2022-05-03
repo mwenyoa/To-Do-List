@@ -9,7 +9,7 @@
 - Material UI icons
 
 ## Live Demo
-> If available can be seen here: https://mwenyoa.github.io/To-Do-List/
+> If available can be seen here: https://stalwart-fairy-18e659.netlify.app/
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
