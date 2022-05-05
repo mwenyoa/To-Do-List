@@ -37,3 +37,13 @@ describe('Testing Add function', () => {
     expect(todoList.tasksArray).toHaveLength(1);
   });
 });
+
+describe('Test: functions', () => {
+  test('Test: Update task status', () => {
+    const todoList = new Tasker();
+    todoList.add('Test update function');
+    todoList.add('Test2 for update function');
+    todoList.updateActivityStatus(2);
+    expect(todoList.tasksArray[1].completed).toBe(true);
+  });
+});
