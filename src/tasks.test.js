@@ -23,17 +23,21 @@ document.body.innerHTML = `<section class="d-flex cols todo-list">
 </section>`;
 
 describe('Testing Add function', () => {
-  window.localStorage = Storage.prototype;
-  test('Add task', () => {
-    const todoList = new Tasker();
-    todoList.add('Test');
-    expect(todoList.tasksArray).toHaveLength(1);
+    window.localStorage = Storage.prototype;
+    test('Test: Add task', () => {
+        const todoList = new Tasker();
+        todoList.add('Test');
+        todoList.add('Test 2');
+        expect(todoList.tasksArray).toHaveLength(2);
 
-    const data = JSON.parse(localStorage.getItem('tasks'));
-    expect(data).not.toBe(null);
-    expect(localStorage).toHaveLength(1);
-  });
+        const data = JSON.parse(localStorage.getItem('tasks'));
+        expect(data).not.toBe(null);
+        expect(localStorage).toHaveLength(2);
+    });
 
-  test('Delete task', () => {
-  });
+    test('Test: Delete task', () => {
+        const todoList = new Tasker();
+        todoList.delete(1);
+        expect(todoList.list).toHaveLength(1);
+    });
 });
