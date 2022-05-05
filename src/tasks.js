@@ -49,6 +49,7 @@ export default class Tasker {
         index: this.tasksArray.length,
       };
       this.tasksArray.push(newActivity);
+      this.populateTodo();
     }
   }
 

@@ -9,7 +9,6 @@ document.querySelector('#add-task').addEventListener('submit', (e) => {
   e.preventDefault();
   const action = e.target.elements.activity.value;
   todoList.add(action);
-  todoList.populateTodo();
   e.target.reset();
 });
 
