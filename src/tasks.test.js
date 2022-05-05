@@ -23,27 +23,35 @@ document.body.innerHTML = `<section class="d-flex cols todo-list">
 </section>`;
 
 describe('Testing Add function', () => {
-  window.localStorage = Storage.prototype;
-  test('Test: Add task', () => {
-    const todoList = new Tasker();
-    todoList.add('Test');
-    todoList.add('Test 2');
-    expect(todoList.tasksArray).toHaveLength(2);
-  });
+    window.localStorage = Storage.prototype;
+    test('Test: Add task', () => {
+        const todoList = new Tasker();
+        todoList.add('Test');
+        todoList.add('Test 2');
+        expect(todoList.tasksArray).toHaveLength(2);
+    });
 
-  test('Test: Delete task', () => {
-    const todoList = new Tasker();
-    todoList.delete(1);
-    expect(todoList.tasksArray).toHaveLength(1);
-  });
+    test('Test: Delete task', () => {
+        const todoList = new Tasker();
+        todoList.delete(1);
+        expect(todoList.tasksArray).toHaveLength(1);
+    });
 });
 
 describe('Test: functions', () => {
-  test('Test: Update task status', () => {
-    const todoList = new Tasker();
-    todoList.add('Test update function');
-    todoList.add('Test2 for update function');
-    todoList.updateActivityStatus(2);
-    expect(todoList.tasksArray[1].completed).toBe(true);
-  });
+    test('Test: Update task status', () => {
+        const todoList = new Tasker();
+        todoList.add('Test update function');
+        todoList.add('Test2 for update function');
+        todoList.updateActivityStatus(2);
+        expect(todoList.tasksArray[1].completed).toBe(true);
+    });
+
+    test('Test: Edit task', () => {
+        const todoList = new Tasker();
+        todoList.add('Test for edit function');
+        expect(todoList.tasksArray[0].description).toMatch('Test for edit function');
+        todoList.edit(1, 'Edited Task');
+        expect(todoList.tasksArray[0].description).toMatch('Edited Task');
+    });
 });
