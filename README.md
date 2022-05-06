@@ -1,5 +1,8 @@
+
 # To-Do-List
 > To-Do-List is a tool that helps you organize your day. It allows you to add a list of things you want to do, marking them as complete as well as removing them from the list. It is built using Webpack and ES6 syntax.
+
+![todo-list-pic](https://user-images.githubusercontent.com/28694196/167117158-a387cb16-b4c2-4e0a-bf0a-2f3b8824fb08.png)
 ## Built With
 
 - HTML
