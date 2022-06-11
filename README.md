@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@mwenyoa](https://github.com/mwenyoa)
 - Twitter: [@anthony_mwenyo](https://twitter.com/anthony_mwenyo)
-- LinkedIn: [@anthony-mwenyo](https://www.linkedin.com/in/anthony-mwenyo-710318131/)
+- LinkedIn: [@anthony-mwenyo](https://www.linkedin.com/in/anthony-mwenyo)
 
 
 ## 🤝 Contributing
